@@ -161,7 +161,7 @@ rws_thread rws_thread_create(rws_thread_funct thread_function, void *user_object
         {
             if (pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE) == 0)
             {
-                attr.stack_size = 1024 * 8;
+                pthread_attr_setstacksize(&attr, 1024 * 8);
                 res = pthread_create(&t->thread, &attr, &rws_thread_func_priv, (void *)t);
             }
         }
