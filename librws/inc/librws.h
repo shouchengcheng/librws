@@ -31,44 +31,44 @@
 
 // check windows
 #if defined(WIN32) || defined(_WIN32) || defined(WIN32_LEAN_AND_MEAN) || defined(_WIN64) || defined(WIN64)
-    #define RWS_OS_WINDOWS 1
+#define RWS_OS_WINDOWS 1
 #endif
 
 // extern
 #if defined(__cplusplus) || defined(_cplusplus)
-    #define RWS_EXTERN extern "C"
+#define RWS_EXTERN extern "C"
 #else
-    #define RWS_EXTERN extern
+#define RWS_EXTERN extern
 #endif
 
 // attribute
 #if defined(__GNUC__)
-    #if (__GNUC__ >= 4)
-        #if defined(__cplusplus) || defined(_cplusplus)
-            #define RWS_ATTRIB __attribute__((visibility("default")))
-        #else
-            #define RWS_ATTRIB __attribute__((visibility("default")))
-        #endif
-    #endif
+#if (__GNUC__ >= 4)
+#if defined(__cplusplus) || defined(_cplusplus)
+#define RWS_ATTRIB __attribute__((visibility("default")))
+#else
+#define RWS_ATTRIB __attribute__((visibility("default")))
+#endif
+#endif
 #endif
 
 // check attrib and define empty if not defined
 #if !defined(RWS_ATTRIB)
-    #define RWS_ATTRIB
+#define RWS_ATTRIB
 #endif
 
 // dll api
 #if defined(RWS_OS_WINDOWS)
-    #if defined(RWS_BUILD)
-        #define RWS_DYLIB_API __declspec(dllexport)
-    #else
-        #define RWS_DYLIB_API __declspec(dllimport)
-    #endif
+#if defined(RWS_BUILD)
+#define RWS_DYLIB_API __declspec(dllexport)
+#else
+#define RWS_DYLIB_API __declspec(dllimport)
+#endif
 #endif
 
 // check dll api and define empty if not defined
 #if !defined(RWS_DYLIB_API)
-    #define RWS_DYLIB_API
+#define RWS_DYLIB_API
 #endif
 
 // combined lib api

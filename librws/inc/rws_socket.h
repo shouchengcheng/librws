@@ -26,15 +26,15 @@
 #include "rws_common.h"
 
 #if defined(RWS_OS_WINDOWS)
-    #include <winsock2.h>
-    #include <ws2tcpip.h>
+#include <winsock2.h>
+#include <ws2tcpip.h>
 #else
-    #include <netdb.h>
-    #include <sys/socket.h>
-    #include <sys/types.h>
+#include <netdb.h>
+#include <sys/socket.h>
+#include <sys/types.h>
     //#include <netinet/tcp.h>
-    #include <fcntl.h>
-    #include <unistd.h>
+#include <fcntl.h>
+#include <unistd.h>
 #endif
 
 #include <assert.h>
@@ -46,22 +46,22 @@
 #include "rws_list.h"
 
 #ifdef LIBRWS_USING_MBED_TLS
-    #include "mbedtls/net.h"
-    #include "mbedtls/ssl.h"
-    #include "mbedtls/certs.h"
-    #include "mbedtls/entropy.h"
-    #include "mbedtls/ctr_drbg.h"
-    #include "mbedtls/debug.h"
+#include "mbedtls/net.h"
+#include "mbedtls/ssl.h"
+#include "mbedtls/certs.h"
+#include "mbedtls/entropy.h"
+#include "mbedtls/ctr_drbg.h"
+#include "mbedtls/debug.h"
 #endif
 
 #if defined(RWS_OS_WINDOWS)
     typedef SOCKET rws_socket_t;
-    #define RWS_INVALID_SOCKET INVALID_SOCKET
-    #define RWS_SOCK_CLOSE(sock) closesocket(sock)
+#define RWS_INVALID_SOCKET INVALID_SOCKET
+#define RWS_SOCK_CLOSE(sock) closesocket(sock)
 #else
     typedef int rws_socket_t;
-    #define RWS_INVALID_SOCKET -1
-    #define RWS_SOCK_CLOSE(sock) close(sock)
+#define RWS_INVALID_SOCKET -1
+#define RWS_SOCK_CLOSE(sock) close(sock)
 #endif
 
 #ifdef LIBRWS_USING_MBED_TLS

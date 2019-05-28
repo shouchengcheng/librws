@@ -33,8 +33,8 @@
 #define RWS_RECEIVE_BUFF_SIZE   (2048) /* 接受buff分配内存大小 */
 
 #ifndef RWS_OS_WINDOWS
-    #define WSAEWOULDBLOCK EAGAIN
-    #define WSAEINPROGRESS EINPROGRESS
+#define WSAEWOULDBLOCK EAGAIN
+#define WSAEINPROGRESS EINPROGRESS
 #endif
 
 #if ((DBG_LEVEL) == (DBG_LOG))
@@ -1543,7 +1543,7 @@ void rws_socket_check_write_error(_rws_socket *s, int error_num)
 
 #ifdef LIBRWS_USING_MBED_TLS
 #if defined(MBEDTLS_DEBUG_C)
-    #define DEBUG_LEVEL 1
+#define DEBUG_LEVEL 1
 #endif
 
 void rws_debug(void *ctx, int level, const char *file, int line, const char *str)

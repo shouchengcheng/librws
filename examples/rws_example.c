@@ -25,9 +25,9 @@
 #include <stdlib.h>
 
 #if (RTTHREAD_VERSION < 30100)
-    #define DBG_SECTION_NAME "[LIBRWS.Test] "
+#define DBG_SECTION_NAME "[LIBRWS.Test] "
 #else
-    #define DBG_SECTION_NAME "LIBRWS.Test"
+#define DBG_SECTION_NAME "LIBRWS.Test"
 #endif
 #define DBG_ENABLE
 #define DBG_LEVEL DBG_LOG

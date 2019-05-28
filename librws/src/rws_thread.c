@@ -28,10 +28,10 @@
 #include <assert.h>
 
 #if defined(RWS_OS_WINDOWS)
-    #include <windows.h>
+#include <windows.h>
 #else
-    #include <pthread.h>
-    #include <unistd.h>
+#include <pthread.h>
+#include <unistd.h>
 #endif
 #include "rtthread.h"
 

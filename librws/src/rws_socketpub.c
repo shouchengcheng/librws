@@ -27,7 +27,7 @@
 #include <assert.h>
 
 #if !defined(RWS_OS_WINDOWS)
-    #include <signal.h>
+#include <signal.h>
 #endif
 
 // public
