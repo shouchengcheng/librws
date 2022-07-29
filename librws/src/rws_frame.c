@@ -296,7 +296,6 @@ void rws_frame_combine_datas(_rws_frame *to, _rws_frame *from)
         {
             memcpy(comb_data, to->data, to->data_size);
         }
-        //comb_data += to->data_size;
         offset += to->data_size;
         if (from->data && from->data_size)
         {
